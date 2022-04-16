@@ -7,7 +7,7 @@ void	tmp_write(t_shell *shell, char c, int i)
 		shell->tmp_split2 = i;
 }
 
-void	record_num(int count, t_shell *shell, char c)
+void	set_count(int count, t_shell *shell, char c)
 {
 	if (c == ';')
 		shell->func_count = count;
@@ -30,7 +30,7 @@ void	ft_freesplit_2(char **x)
 	free(x);
 }
 
-int	ft_splitcounterword_2(char const*s, char c, t_shell *shell)
+static int	count_words(char const*s, char c, t_shell *shell)
 {
 	int		i;
 	char	pre;
@@ -42,7 +42,7 @@ int	ft_splitcounterword_2(char const*s, char c, t_shell *shell)
 	count = 0;
 	while (s[i])
 	{
-		printf("%c %c %d %d %d %d\n", pre, s[i], shell->preflag, shell->flags[i], count, i);
+		// printf("%c %c %d %d %d %d\n", pre, s[i], shell->preflag, shell->flags[i], count, i);
 		if (((s[i] != c) || (s[i] == c && !shell->flags[i])) \
 		&& pre == c && shell->preflag)
 			count++;
@@ -51,11 +51,10 @@ int	ft_splitcounterword_2(char const*s, char c, t_shell *shell)
 		i++;
 	}
 	shell->preflag = 1;
-	// show_struct(shell, " 2 counter");
 	return (count);
 }
 
-int	ft_splitcounterchar_2(char const *s, char c, t_shell *shell)
+static int	counter_chars(char const *s, char c, t_shell *shell)
 {
 	int	i;
 
@@ -66,12 +65,12 @@ int	ft_splitcounterchar_2(char const *s, char c, t_shell *shell)
 	return (i);
 }
 
-int	ft_splitwriterword_2(const char *s, char **x, int l, t_shell *shell)
+static int	write_word(const char *s, char **x, int l, t_shell *shell)
 {
 	int	h;
 	int	count;
 
-	count = ft_splitcounterchar_2 (s, shell->tmp_split, shell);
+	count = counter_chars (s, shell->tmp_split, shell);
 	x[l] = (char *)malloc(count + 1);
 	if (x[l] == 0)
 		ft_freesplit_2 (x);
@@ -102,14 +101,13 @@ char	**ft_split_shell(char const *s, char c, int i, t_shell *shell)
 	char	**x;
 	char	pre;
 
-	show_struct(shell, "1");
 	// set_point("1");
 	pre = c;
 	l = 0;
 	if (!s)
 		return (0);
-	count = ft_splitcounterword_2(s, c, shell);
-	record_num(count, shell, c);
+	count = count_words(s, c, shell);
+	set_count(count, shell, c);
 	// set_point("2");
 	x = (char **) malloc(sizeof (char *) * (count + 1));
 	if (!x)
@@ -122,7 +120,7 @@ char	**ft_split_shell(char const *s, char c, int i, t_shell *shell)
 		tmp_write(shell, c, i);
 		if (((s[i] != c) || (s[i] != c && !shell->flags[i])) \
 		&& pre == c && shell->preflag)
-			l = ft_splitwriterword_2(s + i, x, l, shell);
+			l = write_word(s + i, x, l, shell);
 		shell->preflag = shell->flags[i];
 		pre = s[i];
 	}

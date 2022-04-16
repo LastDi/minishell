@@ -28,6 +28,11 @@ static void	init_params(int argc, char **argv, char **env, t_shell *shell)
 	shell->flags_count = -1;
 	shell->cycle = 0;
 	shell->error_code = 0;
+	shell->flags = NULL;
+	shell->flags_for_prog = NULL;
+	shell->start_flag_prog = NULL;
+	shell->count_flag_prog = NULL;
+	shell->pipes = NULL;
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -37,6 +42,7 @@ int	main(int argc, char **argv, char **envp)
 	t_com	com;
 	t_list	*evl;
 
+		
 	init_params(argc, argv, envp, &shell);
 	evl = get_env_lst(envp);
 	while (1)

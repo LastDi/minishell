@@ -1,4 +1,4 @@
-NAME = parser
+NAME = minishell
 
 HEADER = minishell.h 
 
@@ -9,7 +9,7 @@ LIST_C = main.c minishell.c error.c\
 
 OBJ_C = ${patsubst %.c, ${OBJ}%.o, ${LIST_C}}
 
-FLAGS = -Wall 
+FLAGS = -Wall -Wextra -Werror
 
 READL = -L/usr/local/lib -I/usr/local/include -lreadline
 LIBFT = -L./src/libft -lft

@@ -16,14 +16,14 @@ void	memor_part(t_shell *shell, int i)
 	}
 	if (i == 222)
 	{
-		set_point("6.1");
-		if (!shell->pipes)
-			printf("NULL PIPES\n");
-		free(shell->pipes);
-		set_point("6.2");
-		free(shell->flags_for_prog);
-		free(shell->start_flag_prog);
-		free(shell->count_flag_prog);
+		if (shell->pipes != NULL)
+			free(shell->pipes);
+		if (shell->flags_for_prog != NULL)
+			free(shell->flags_for_prog);
+		if (shell->start_flag_prog != NULL)
+			free(shell->start_flag_prog);
+		if (shell->count_flag_prog != NULL)
+			free(shell->count_flag_prog);
 		shell->pipes = malloc(sizeof(t_pipes) * shell->func_count);
 		shell->flags_for_prog = malloc(sizeof(void **) * shell->func_count);
 		shell->start_flag_prog = malloc(sizeof(int) * shell->func_count);
@@ -39,9 +39,9 @@ void	memor_for_pipe_flags(char *str, t_shell *shell, int i, int j)
 	memor_part(shell, 111);
 	str1 = ft_split_shell(str, ';', -1, shell);
 	set_point("6");
-	// memor_part(shell, 222);
+	memor_part(shell, 222);
 	set_point("7");
-	/* while (++i < shell->func_count)
+	while (++i < shell->func_count)
 		shell->flags_for_prog[i] = malloc(sizeof(int) \
 		* shell->flags_count + shell->longs + 1);
 	i = -1;
@@ -59,7 +59,7 @@ void	memor_for_pipe_flags(char *str, t_shell *shell, int i, int j)
 	while (++i < shell->func_count)
 		free(str1[i]);
 	free(str1);
-	tmp_changer(shell); */
+	tmp_changer(shell);
 }
 
 void	set_flag(char *str, t_shell *shell)
