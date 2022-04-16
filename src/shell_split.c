@@ -42,7 +42,6 @@ int	ft_splitcounterword_2(char const*s, char c, t_shell *shell)
 	count = 0;
 	while (s[i])
 	{
-		printf("%c %c %d %d %d %d\n", pre, s[i], shell->preflag, shell->flags[i], count, i);
 		if (((s[i] != c) || (s[i] == c && !shell->flags[i])) \
 		&& pre == c && shell->preflag)
 			count++;
@@ -51,7 +50,6 @@ int	ft_splitcounterword_2(char const*s, char c, t_shell *shell)
 		i++;
 	}
 	shell->preflag = 1;
-	// show_struct(shell, " 2 counter");
 	return (count);
 }
 
@@ -102,23 +100,18 @@ char	**ft_split_shell(char const *s, char c, int i, t_shell *shell)
 	char	**x;
 	char	pre;
 
-	show_struct(shell, "1");
-	// set_point("1");
 	pre = c;
 	l = 0;
 	if (!s)
 		return (0);
 	count = ft_splitcounterword_2(s, c, shell);
 	record_num(count, shell, c);
-	// set_point("2");
 	x = (char **) malloc(sizeof (char *) * (count + 1));
 	if (!x)
 		return (0);
 	x[count] = 0;
-	// set_point("3");
 	while (s[++i])
 	{
-		// set_point("4");
 		tmp_write(shell, c, i);
 		if (((s[i] != c) || (s[i] != c && !shell->flags[i])) \
 		&& pre == c && shell->preflag)
@@ -126,6 +119,5 @@ char	**ft_split_shell(char const *s, char c, int i, t_shell *shell)
 		shell->preflag = shell->flags[i];
 		pre = s[i];
 	}
-	// set_point("5");
 	return (x);
 }

@@ -32,7 +32,7 @@ static void	init_params(int argc, char **argv, char **env, t_shell *shell)
 
 int	main(int argc, char **argv, char **envp)
 {
-	// int		i;
+	int		i;
 	t_shell	shell;
 	t_com	com;
 	t_list	*evl;
@@ -41,13 +41,12 @@ int	main(int argc, char **argv, char **envp)
 	evl = get_env_lst(envp);
 	while (1)
 	{
-		set_point("-6");
 		minishell(&shell, &com, &evl);
-		// i = 0;
-		/* while (i < shell.func_count && shell.free)
+		i = 0;
+		while (i < shell.func_count && shell.free)
 		{
 			free(shell.flags_for_prog[i]);
 			i++;
-		} */
+		}
 	}
 }

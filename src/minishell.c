@@ -16,11 +16,7 @@ void	memor_part(t_shell *shell, int i)
 	}
 	if (i == 222)
 	{
-		set_point("6.1");
-		if (!shell->pipes)
-			printf("NULL PIPES\n");
 		free(shell->pipes);
-		set_point("6.2");
 		free(shell->flags_for_prog);
 		free(shell->start_flag_prog);
 		free(shell->count_flag_prog);
@@ -35,13 +31,10 @@ void	memor_for_pipe_flags(char *str, t_shell *shell, int i, int j)
 {
 	char	**str1;
 
-	set_point("-1");
 	memor_part(shell, 111);
 	str1 = ft_split_shell(str, ';', -1, shell);
-	set_point("6");
-	// memor_part(shell, 222);
-	set_point("7");
-	/* while (++i < shell->func_count)
+	memor_part(shell, 222);
+	while (++i < shell->func_count)
 		shell->flags_for_prog[i] = malloc(sizeof(int) \
 		* shell->flags_count + shell->longs + 1);
 	i = -1;
@@ -59,7 +52,7 @@ void	memor_for_pipe_flags(char *str, t_shell *shell, int i, int j)
 	while (++i < shell->func_count)
 		free(str1[i]);
 	free(str1);
-	tmp_changer(shell); */
+	tmp_changer(shell);
 }
 
 void	set_flag(char *str, t_shell *shell)
@@ -89,27 +82,20 @@ void	minishell(t_shell *shell, t_com *com, t_list **evl)
 	shell->error = 0;
 	shell->free = 0;
 	str = readline("minishell> ");
-	set_point("-5");
 	if (str == NULL)
 		handler_ctrl_d();
-	set_point("-4");
 	if (ft_strncmp(str, "\0", 1) != 0)
 		add_history(str);
 	set_flag(str, shell);
-		set_point("-3");
 
 	if (!preparser(str) && !shell->error)
 	{
-		set_point("-2");
 		str = parser(str, shell);
 		shell->error = error_checker(str, shell);
 		memor_for_pipe_flags(str, shell, -1, 0);
-		// str1 = ft_split_shell(str, ';', -1, shell);
-		// write_pipe_flags(shell);
-		// work_with_pipes(shell, com, evl, str1);
-		(void)str1;
-		(void)evl;
-		(void)com;
+		str1 = ft_split_shell(str, ';', -1, shell);
+		write_pipe_flags(shell);
+		work_with_pipes(shell, com, evl, str1);
 	}
 	free(str);
 }
