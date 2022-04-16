@@ -1,4 +1,4 @@
-#include "../parser.h"
+#include "../minishell.h"
 
 char	*parser_dollar(char *str, int *i, t_shell *shell)
 {
@@ -116,7 +116,7 @@ char *parser(char *s, t_shell *shell)
     return (s);
 }
 
-int main(int argc, char *argv[], char *env[])
+/* int main(int argc, char *argv[], char *env[])
 {
     char    *str;
     t_shell shell;
@@ -129,4 +129,4 @@ int main(int argc, char *argv[], char *env[])
 
     printf("STR %s", str);
     return (0);
-}
+} */
