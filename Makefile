@@ -1,4 +1,4 @@
-NAME = parser
+NAME = minishell
 
 HEADER = minishell.h 
 
@@ -9,7 +9,7 @@ LIST_C = main.c minishell.c error.c\
 
 OBJ_C = ${patsubst %.c, ${OBJ}%.o, ${LIST_C}}
 
-FLAGS = -Wall 
+FLAGS = -Wall -Wextra -Werror
 
 READL = -L/usr/local/lib -I/usr/local/include -lreadline
 LIBFT = -L./src/libft -lft
@@ -24,7 +24,7 @@ all : ${NAME}
 	@echo -n "${GREEN} DONE ! ${NC}"
 
 ${NAME} : ${OBJ_C} ${OBJ} ${LIBFT}
-	@gcc -o ${NAME} ${FLAGS} ${OBJ_C} ${READL} ${LIBFT}
+	@gcc -g -o ${NAME} ${FLAGS} ${OBJ_C} ${READL} ${LIBFT}
 
 ${LIBFT} :
 	@make -C ${SRC}libft
