@@ -75,6 +75,7 @@ char	*find_key(t_shell *shell, char *str1);
 //signals
 void	handler_ctrl_c(int val);
 void	handler_ctrl_d();
+void	handler_ctrl_z(int val); //DELETE
 
 //errors
 int	error_checker(char *str, t_shell *shell);

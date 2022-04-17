@@ -24,7 +24,7 @@ all : ${NAME}
 	@echo -n "${GREEN} DONE ! ${NC}"
 
 ${NAME} : ${OBJ_C} ${OBJ} ${LIBFT}
-	@gcc -o ${NAME} ${FLAGS} ${OBJ_C} ${READL} ${LIBFT}
+	@gcc -g -o ${NAME} ${FLAGS} ${OBJ_C} ${READL} ${LIBFT}
 
 ${LIBFT} :
 	@make -C ${SRC}libft
