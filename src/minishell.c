@@ -35,13 +35,10 @@ void	malloc_part(t_shell *shell, int i)
 void	malloc_for_pipe_flags(char *str, t_shell *shell, int i, int j)
 {
 	char	**str1;
-
-	set_point("-1");
-	malloc_part(shell, 111);
+  
+	memor_part(shell, 111);
 	str1 = ft_split_shell(str, ';', -1, shell);
-	set_point("6");
-	malloc_part(shell, 222);
-	set_point("7");
+	memor_part(shell, 222);
 	while (++i < shell->func_count)
 		shell->flags_for_prog[i] = malloc(sizeof(int) \
 		* shell->flags_count + shell->longs + 1);
@@ -144,18 +141,14 @@ void	minishell(t_shell *shell, t_com *com, t_list **evl)
 	shell->error = 0;
 	shell->free = 0;
 	str = readline("minishell> ");
-	set_point("-5");
 	if (str == NULL)
 		handler_ctrl_d();
-	set_point("-4");
 	if (ft_strncmp(str, "\0", 1) != 0)
 		add_history(str);
 	set_flag(str, shell);
-		set_point("-3");
 
 	if (!preparser(str) && !shell->error)
 	{
-		set_point("-2");
 		str = parser(str, shell);
 		shell->error = error_checker(str, shell);
 		malloc_for_pipe_flags(str, shell, -1, 0);
