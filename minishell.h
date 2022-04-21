@@ -82,6 +82,13 @@ int	error_checker(char *str, t_shell *shell);
 
 char	**ft_split_shell(char const *s, char c, int i, t_shell *shell);
 
+// redirect
+int		fd_redirect(t_shell *shell);
+int		fd_redirect_output(t_shell *shell);
+int		read_for_redirect(t_shell *shell, char *str, int j, int x);
+int		fd_file_exist(char *str, int j, int n);
+char	*ft_find_file_name(char *str, t_shell *shell, int l);
+
 
 // DELETE IT
 void show_struct(t_shell *shell, char *s);

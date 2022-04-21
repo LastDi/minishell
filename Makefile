@@ -5,6 +5,7 @@ HEADER = minishell.h
 LIST_C = main.c minishell.c error.c\
 		preparser.c parser_main.c parser_utils.c sig_handlers.c\
 		shell_split.c \
+		redirect.c redirect_output.c redirect_utils.c \
 		delete_it.c \
 
 OBJ_C = ${patsubst %.c, ${OBJ}%.o, ${LIST_C}}
