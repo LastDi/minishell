@@ -1,7 +1,7 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# include "src/libft/libft.h"
+# include <dirent.h>
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -64,6 +64,12 @@ typedef struct command
 	char			*path;
 }				t_com;
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
 void	minishell(t_shell *shell, t_com *com, t_list **evl);
 
 //parser
@@ -78,21 +84,101 @@ void	handler_ctrl_d();
 void	handler_ctrl_z(int val); //DELETE
 
 //errors
-int	error_checker(char *str, t_shell *shell);
+int		error_checker(char *str, t_shell *shell);
 
 char	**ft_split_shell(char const *s, char c, int i, t_shell *shell);
-
-// redirect
-int		fd_redirect(t_shell *shell);
-int		fd_redirect_output(t_shell *shell);
-int		read_for_redirect(t_shell *shell, char *str, int j, int x);
-int		fd_file_exist(char *str, int j, int n);
-char	*ft_find_file_name(char *str, t_shell *shell, int l);
 
 
 // DELETE IT
 void show_struct(t_shell *shell, char *s);
 void set_point(char *s);
 
+
+
+// LIBA
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_strlen(const char *c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_bzero(void *b, size_t len);
+char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
+int		ft_lstcount(t_com **com);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+t_com	*ft_lstgive(t_com **com, int i);
+int		ft_isalpha(int c);
+int		ft_isalnum(int c);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+int		ft_strlen_sym(char *str, char c);
+int		ft_isdigit(int c);
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+int		ft_atoi(const char *str);
+
+// Redirect
+int		fd_redirect(t_shell *shell);
+int		fd_redirect_output(t_shell *shell);
+int		fd_redirect_output_one(t_shell *shell);
+int		fd_redirect_output_two(t_shell *shell);
+int		fd_redirect_input(t_shell *shell);
+int		fd_redirect_input_one(t_shell *shell);
+int		fd_redirect_input_two(t_shell *shell);
+int		fd_file_not_exist(char *str, int j, int n);
+char	*ft_find_file_name(char *str, t_shell *shell, int l);
+int		read_for_redirect(t_shell *shell, char *str, int j, int x);
+int	gnl_light(char **str);
+
+// Exec command
+void	init_com(t_shell *shell, t_com *com);
+int		ft_exec_start(char **ev, t_com *com, t_list **evl);
+int		ft_exec_one_com(t_com *com, char **ev, t_list **evl);
+void	ft_duplicate_fd(t_com *com);
+int		directory_access(t_com *com);
+int		ft_exec_errors(char *s1, char *s2);
+char	*make_name_after_slash(char *str);
+char	*delete_slash_from_name(char *str);
+void	ft_exec_full_path(t_com *com, char **ev, t_list **evl);
+int		ft_choose_exec_com(t_com *com, t_list **evl);
+int		parsing_export(char *str);
+int		ft_exec_pipe(t_com **com, char **ev, t_list **evl);
+
+// system commands
+int		ft_pwd(void);
+int		ft_cd(t_com *com, t_list **evl);
+int		ft_echo(t_com *com);
+int		ft_export(t_com *com, t_list **evl);
+int		ft_unset(t_com *com, t_list **evl);
+int		ft_env(t_com *com, t_list **evl);
+int		ft_exit(t_com *com, t_list **evl);
+
+// utils for command
+void	ft_sort_easy(t_list **evl);
+int		check_arg_unset(char *str);
+int		unset_help1(t_com *com, int i);
+void	env_help(char *help);
+int		sort_count(t_list **evl);
+int		who_is_more(char *s1, char *s2);
+
+//UTILS
+void	tmp_changer(t_shell *shell);
+void	malloc_part(t_shell *shell, int i);
+void	tmp_write(t_shell *shell, char c, int i);
+void	set_count(int count, t_shell *shell, char c);
+
+// CHANGE THIS TODO
+int		ebannyi_tipo_unset2(char *arg, t_list **l1, t_list **l3, t_list **l2);
+int		ebannyi_tipo_unset1(char *arg, t_list **l1, t_list **l2, t_list **evl);
+int		tipo_unset_h_c1_test(char *arg, t_list **evl, char *help, t_list *l1);
+int		tipo_unset_h_c2(char *arg, char *help);
+char	*arg_tipo_unset(char *arg);
+
+// free
+int		free_com_list(t_com *com);
+void	free_split_str(char **str, int j);
+void	ft_freesplit_2(char **x);
 
 #endif
