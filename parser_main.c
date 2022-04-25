@@ -78,7 +78,7 @@ char	*parser_quotes(char *str, int *i, int limiter)
 	char	*str4;
 
 	j = *i;
-	while (str[++*i] && limiter)
+	while (str[++*i] && limiter) // todo можно просто проверить пока не равно одинарной ковычке
 	{
 		if (str[*i] == '\'')
 			limiter = 0;

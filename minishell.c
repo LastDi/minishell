@@ -104,7 +104,6 @@ void	minishell(t_shell *shell, t_com *com, t_list **evl)
 	if (ft_strncmp(str, "\0", 1) != 0)
 		add_history(str);
 	set_flag(str, shell);
-
 	if (!preparser(str) && !shell->error)
 	{
 		str = parser(str, shell);
