@@ -1,4 +1,5 @@
 #include "minishell.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -6,7 +7,7 @@
 void	handler_ctrl_c(int val)
 {
 	val = ft_strlen(rl_line_buffer);
-	if (ft_strlen(rl_line_buffer) == 0)
+	if (val == 0)
 	{
 		rl_on_new_line();
 		rl_redisplay();
@@ -14,7 +15,7 @@ void	handler_ctrl_c(int val)
 		rl_on_new_line();
 		rl_redisplay();
 	}
-	else 
+	else if (val && ft_strncmp(rl_line_buffer, "cat", 3))
 	{
 		free(rl_line_buffer);
 		rl_line_buffer = malloc(val);
@@ -25,19 +26,43 @@ void	handler_ctrl_c(int val)
 		rl_redisplay();
 	}
 }
-void	handler_ctrl_z(int val)
-{
-	(void)val;
-	// write(1, "1", 1);
-	// char buf;
 
-	// val = read(0, &buf, 1);
-	// if (val)
+// Handler for ctrl+\ signal
+void	handler_ctrl_backslash(int val)
+{
+	val = ft_strlen(rl_line_buffer);
+	if (val > 0 && !(ft_strncmp(rl_line_buffer, "cat", 3) || ft_strncmp(rl_line_buffer, "head", 4)
+	|| ft_strncmp(rl_line_buffer, "tail", 4)))
+	{
+		rl_on_new_line();
+		rl_redisplay();
+		ft_putstr_fd("\nexit \n", 1);
+	}
+	else if ((ft_strncmp(rl_line_buffer, "cat", 3) || ft_strncmp(rl_line_buffer, "head", 4
+	|| ft_strncmp(rl_line_buffer, "tail", 4))))
+	{
+		ft_putstr_fd("Quit (core dumped)\n", 1);
+		exit(0);
+	}
+	else 
+	{
+		rl_on_new_line();
+		rl_replace_line("", 11);
+		rl_redisplay();
+	}
 }
+
 // Handler for ctrl+d (EOF)
-void	handler_ctrl_d()
+/* void	handler_ctrl_d()
 {
 	rl_on_new_line();
+	rl_redisplay();
+	ft_putstr_fd("exit \n", 1);
+	exit(0);
+} */
+
+void	handler_ctrl_d()
+{
 	rl_redisplay();
 	ft_putstr_fd("exit \n", 1);
 	exit(0);

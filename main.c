@@ -20,7 +20,7 @@ void	init_params(int argc, char **argv, char **env, t_shell *shell)
 	(void)argc;
 	(void)argv;
 	signal(SIGINT, handler_ctrl_c);
-	signal(SIGQUIT, handler_ctrl_z);
+	signal(SIGQUIT, handler_ctrl_backslash);
 //	signal(SIGQUIT, SIG_IGN);
 	signal(SIGTSTP, SIG_IGN);
 	shell->env = env;
