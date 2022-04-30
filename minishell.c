@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oalvera <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/30 14:35:12 by oalvera           #+#    #+#             */
+/*   Updated: 2022/04/30 14:35:14 by oalvera          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 void	malloc_for_pipe_flags(char *str, t_shell *shell, int i, int j)
 {
-	char **str1;
+	char	**str1;
 
 	malloc_part(shell, 111);
 	str1 = ft_split_shell(str, ';', -1, shell);
 	malloc_part(shell, 222);
 	while (++i < shell->func_count)
 		shell->flags_for_prog[i] = malloc(sizeof(int) \
- * shell->flags_count + shell->longs + 1);
+			* shell->flags_count + shell->longs + 1);
 	i = -1;
 	while (++i < shell->func_count)
 	{
@@ -71,10 +83,9 @@ void	create_pipe_matrix(t_shell *shell)
 
 void	work_with_pipes(t_shell *shell, t_com *com, t_list **evl, char **str1)
 {
-	 int	i;
+	int	i;
 
-	 i = -1;
-//	printf("f count %d\n", shell->func_count);
+	i = -1;
 	while (++i < shell->func_count)
 	{
 		shell->str = ft_split_shell(str1[i], '|', -1, shell);

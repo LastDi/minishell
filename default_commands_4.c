@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   default_commands_4.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oalvera <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/30 14:32:03 by oalvera           #+#    #+#             */
+/*   Updated: 2022/04/30 14:32:08 by oalvera          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 void	unset_help2(t_com *com, int i, t_list **evl, t_list **l1)
@@ -7,7 +19,7 @@ void	unset_help2(t_com *com, int i, t_list **evl, t_list **l1)
 	help1 = (char *)((*l1)->content);
 	if (ft_strncmp(help1, com->flags[i], ft_strlen_sym(help1, '=')) == 0
 		&& (com->flags[i][ft_strlen_sym(help1, '=')] == '\0'
-			|| com->flags[i][ft_strlen_sym(help1, '=')] == '='))
+		|| com->flags[i][ft_strlen_sym(help1, '=')] == '='))
 	{
 		*evl = NULL;
 		free(*l1);
@@ -18,7 +30,7 @@ int	unset_help31(t_com *com, int i, char *help)
 {
 	if (ft_strncmp(help, com->flags[i], ft_strlen_sym(help, '=')) == 0
 		&& (com->flags[i][ft_strlen_sym(help, '=')] == '\0'
-			|| com->flags[i][ft_strlen_sym(help, '=')] == '='))
+		|| com->flags[i][ft_strlen_sym(help, '=')] == '='))
 	{
 		return (1);
 	}
@@ -29,7 +41,7 @@ int	unset_help32(char *hel2, t_com *com, int i)
 {
 	if (ft_strncmp(hel2, com->flags[i], ft_strlen_sym(hel2, '=')) == 0
 		&& (com->flags[i][ft_strlen_sym(hel2, '=')] == '\0'
-			|| com->flags[i][ft_strlen_sym(hel2, '=')] == '='))
+		|| com->flags[i][ft_strlen_sym(hel2, '=')] == '='))
 	{
 		return (1);
 	}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oalvera <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/30 14:35:24 by oalvera           #+#    #+#             */
+/*   Updated: 2022/04/30 14:35:26 by oalvera          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
@@ -80,7 +92,7 @@ char	*find_key(t_shell *shell, char *str1);
 
 //signals
 void	handler_ctrl_c(int val);
-void	handler_ctrl_d();
+void	handler_ctrl_d(void);
 void	handler_ctrl_backslash(int val);
 
 //errors
@@ -88,12 +100,9 @@ int		error_checker(char *str, t_shell *shell);
 
 char	**ft_split_shell(char const *s, char c, int i, t_shell *shell);
 
-
 // DELETE IT
 void show_struct(t_shell *shell, char *s);
 void set_point(char *s);
-
-
 
 // LIBA
 t_list	*ft_lstnew(void *content);
@@ -180,5 +189,4 @@ char	*arg_tipo_unset(char *arg);
 int		free_com_list(t_com *com);
 void	free_split_str(char **str, int j);
 void	ft_freesplit_2(char **x);
-
 #endif

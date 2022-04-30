@@ -1,11 +1,22 @@
-#include "minishell.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   access_dir.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oalvera <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/30 14:28:44 by oalvera           #+#    #+#             */
+/*   Updated: 2022/04/30 14:28:48 by oalvera          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "minishell.h"
 
 char	*make_name_after_slash(char *str)
 {
-	int i;
-	int c_s;
-	char *new;
+	int		i;
+	int		c_s;
+	char	*new;
 
 	i = 0;
 	c_s = 0;
@@ -39,7 +50,6 @@ char	*delete_slash_from_name(char *str)
 	}
 	return (str);
 }
-
 
 int	check_access_dir_help(t_com *com, DIR *dir, int iden)
 {

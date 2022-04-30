@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oalvera <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/30 14:34:44 by oalvera           #+#    #+#             */
+/*   Updated: 2022/04/30 14:34:45 by oalvera          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 t_list	*get_env_lst(char **ev)
 {
-	t_list *evl;
-	int i;
+	t_list	*evl;
+	int		i;
 
 	i = 0;
 	evl = NULL;
@@ -21,7 +33,6 @@ void	init_params(int argc, char **argv, char **env, t_shell *shell)
 	(void)argv;
 	signal(SIGINT, handler_ctrl_c);
 	signal(SIGQUIT, handler_ctrl_backslash);
-//	signal(SIGQUIT, SIG_IGN);
 	signal(SIGTSTP, SIG_IGN);
 	shell->env = env;
 	shell->error = 0;

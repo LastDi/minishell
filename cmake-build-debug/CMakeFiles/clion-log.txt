@@ -1,17 +1,10 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/clang -G "CodeBlocks - Unix Makefiles" -S /home/lastinc/GOOD/mini-shell -B /home/lastinc/GOOD/mini-shell/cmake-build-debug
--- The C compiler identification is GNU 9.4.0
--- Check for working C compiler: /usr/bin/gcc
--- Check for working C compiler: /usr/bin/gcc -- works
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja /Users/oalvera/PROJECT/minishell
+-- The C compiler identification is AppleClang 11.0.0.11000033
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
-CMake Warning:
-  Manually-specified variables were not used by the project:
-
-    CMAKE_CXX_COMPILER
-
-
--- Build files have been written to: /home/lastinc/GOOD/mini-shell/cmake-build-debug
+-- Build files have been written to: /Users/oalvera/PROJECT/minishell/cmake-build-debug
