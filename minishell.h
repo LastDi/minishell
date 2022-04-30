@@ -170,10 +170,10 @@ void	tmp_write(t_shell *shell, char c, int i);
 void	set_count(int count, t_shell *shell, char c);
 
 // CHANGE THIS TODO
-int		ebannyi_tipo_unset2(char *arg, t_list **l1, t_list **l3, t_list **l2);
-int		ebannyi_tipo_unset1(char *arg, t_list **l1, t_list **l2, t_list **evl);
-int		tipo_unset_h_c1_test(char *arg, t_list **evl, char *help, t_list *l1);
-int		tipo_unset_h_c2(char *arg, char *help);
+int		export_unset2(char *arg, t_list **l1, t_list **l3, t_list **l2);
+int		export_unset1(char *arg, t_list **l1, t_list **l2, t_list **evl);
+int		export_unset_help_1(char *arg, t_list **evl, char *help, t_list *l1);
+int		export_unset_help_2(char *arg, char *help);
 char	*arg_tipo_unset(char *arg);
 
 // free

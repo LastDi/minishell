@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int	tipo_unset_help(char *arg, t_list **evl)
+int	export_unset_help(char *arg, t_list **evl)
 {
 	t_list	*l1;
 	t_list	*l2;
@@ -14,16 +14,16 @@ int	tipo_unset_help(char *arg, t_list **evl)
 		l3 = l2->next;
 		help[1] = (char *)(l1->content);
 		help[2] = (char *)(l2->content);
-		if (tipo_unset_h_c1_test(arg, evl, help[1], l1) == 1)
-			return (ebannyi_tipo_unset1(arg, &l1, &l2, evl));
-		else if (tipo_unset_h_c2(arg, help[2]) == 1)
-			return (ebannyi_tipo_unset2(arg, &l1, &l3, &l2));
+		if (export_unset_help_1(arg, evl, help[1], l1) == 1)
+			return (export_unset1(arg, &l1, &l2, evl));
+		else if (export_unset_help_2(arg, help[2]) == 1)
+			return (export_unset2(arg, &l1, &l3, &l2));
 		l1 = l1->next;
 	}
 	return (0);
 }
 
-int	tipo_unset(char *arg, t_list **evl)
+int	export_unset(char *arg, t_list **evl)
 {
 	t_list	*l1;
 	char	*help;
@@ -43,7 +43,7 @@ int	tipo_unset(char *arg, t_list **evl)
 		}
 	}
 	else
-		return (tipo_unset_help(arg, evl));
+		return (export_unset_help(arg, evl));
 	return (0);
 }
 
@@ -102,7 +102,7 @@ int	ft_export(t_com *com, t_list **evl)
 		{
 			if (com->flags[i] && parsing_export(com->flags[i]))
 			{
-				if (tipo_unset(com->flags[i], evl) == 0)
+				if (export_unset(com->flags[i], evl) == 0)
 					ft_lstadd_back(evl, ft_lstnew(ft_strdup(com->flags[i])));
 			}
 			else
