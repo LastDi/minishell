@@ -12,16 +12,16 @@
 
 #include "minishell.h"
 
-void    multiple_free(void *s1, void *s2, void *s3, void *s4)
+void	multiple_free(void *s1, void *s2, void *s3, void *s4)
 {
-    if (s1)
-        free(s1);
-    if (s2)
-        free(s2);
-    if (s3)
-        free(s3);
-    if (s4)
-        free(s4);
+	if (s1)
+		free(s1);
+	if (s2)
+		free(s2);
+	if (s3)
+		free(s3);
+	if (s4)
+		free(s4);
 }
 
 char	*find_key(t_shell *shell, char *str1)
@@ -31,8 +31,8 @@ char	*find_key(t_shell *shell, char *str1)
 	char	*key_line;
 
 	n = ft_strlen(str1);
-	// if (n == 1 && str1[0] == '?')
-		// return (ft_itoa(shell->error_cod));
+	if (n == 1 && str1[0] == '?')
+		return (ft_itoa(shell->error_code));
 	i = 0;
 	while (shell->env[i])
 	{

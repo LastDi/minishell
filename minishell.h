@@ -87,7 +87,7 @@ void	minishell(t_shell *shell, t_com *com, t_list **evl);
 //parser
 char	*parser(char *s, t_shell *shell);
 int		preparser(char *str);
-void    multiple_free(void *s1, void *s2, void *s3, void *s4);
+void	multiple_free(void *s1, void *s2, void *s3, void *s4);
 char	*find_key(t_shell *shell, char *str1);
 
 //signals
@@ -101,8 +101,8 @@ int		error_checker(char *str, t_shell *shell);
 char	**ft_split_shell(char const *s, char c, int i, t_shell *shell);
 
 // DELETE IT
-void show_struct(t_shell *shell, char *s);
-void set_point(char *s);
+void	show_struct(t_shell *shell, char *s);
+void	set_point(char *s);
 
 // LIBA
 t_list	*ft_lstnew(void *content);
@@ -127,6 +127,7 @@ int		ft_strlen_sym(char *str, char c);
 int		ft_isdigit(int c);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 int		ft_atoi(const char *str);
+char	*ft_itoa(int n);
 
 // Redirect
 int		fd_redirect(t_shell *shell);
@@ -139,7 +140,7 @@ int		fd_redirect_input_two(t_shell *shell);
 int		fd_file_not_exist(char *str, int j, int n);
 char	*ft_find_file_name(char *str, t_shell *shell, int l);
 int		read_for_redirect(t_shell *shell, char *str, int j, int x);
-int	gnl_light(char **str);
+int		gnl_light(char **str);
 
 // Exec command
 void	init_com(t_shell *shell, t_com *com);

@@ -8,174 +8,176 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/lastinc/GOOD/mini-shell/cmake-build-debug"/>
+				<Option working_dir="/Users/oalvera/PROJECT/minishell/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/lastinc/GOOD/mini-shell/cmake-build-debug"/>
+				<Option working_dir="/Users/oalvera/PROJECT/minishell/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/lastinc/GOOD/mini-shell/cmake-build-debug"/>
+				<Option working_dir="/Users/oalvera/PROJECT/minishell/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="minishell">
-				<Option output="/home/lastinc/GOOD/mini-shell/cmake-build-debug/minishell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/lastinc/GOOD/mini-shell/cmake-build-debug"/>
+				<Option output="/Users/oalvera/PROJECT/minishell/cmake-build-debug/minishell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/oalvera/PROJECT/minishell/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 minishell"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 minishell"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="minishell/fast">
-				<Option output="/home/lastinc/GOOD/mini-shell/cmake-build-debug/minishell" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/lastinc/GOOD/mini-shell/cmake-build-debug"/>
+				<Option output="/Users/oalvera/PROJECT/minishell/cmake-build-debug/minishell" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/oalvera/PROJECT/minishell/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 minishell/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/lastinc/GOOD/mini-shell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 minishell/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/oalvera/PROJECT/minishell/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/access_dir.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/access_dir.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_command_utils_1.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_command_utils_1.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_command_utils_2.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_command_utils_2.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_command_utils_3.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_command_utils_3.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_commands_1.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_commands_1.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_commands_2.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_commands_2.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_commands_3.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_commands_3.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_commands_4.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_commands_4.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/default_commands_5.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/default_commands_5.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/error.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/error.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/exec_pipe.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/exec_pipe.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/exec_start.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/exec_start.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/exec_utils.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/exec_utils.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/free_utils.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/free_utils.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/main.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/main.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/minishell.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/minishell.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/minishell.h">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/minishell.h">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/parser_main.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/parser_main.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/parser_utils.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/parser_utils.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/preparser.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/preparser.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/redirect.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/redirect.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/redirect_input.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/redirect_input.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/redirect_utils.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/redirect_utils.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/shell_split.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/shell_split.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/shell_utils_1.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/shell_utils_1.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/shell_utils_2.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/shell_utils_2.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/sig_handlers.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/sig_handlers.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/split.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/split.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/utils_1.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/utils_1.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/utils_2.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/utils_2.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/utils_3.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/utils_3.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/utils_4.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/utils_4.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/utils_5.c">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/utils_5.c">
 			<Option target="minishell"/>
 		</Unit>
-		<Unit filename="/home/lastinc/GOOD/mini-shell/CMakeLists.txt">
+		<Unit filename="/Users/oalvera/PROJECT/minishell/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

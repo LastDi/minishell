@@ -35,7 +35,6 @@ int	fd_redirect_output_two(t_shell *shell)
 	str2 = ft_strdup(shell->str[shell->i] + shell->n + 2);
 	free(shell->str[shell->i]);
 	shell->str[shell->i] = ft_strjoin(str1, str2);
-	// todo free str???
 	free(str1);
 	free(str2);
 	return (0);

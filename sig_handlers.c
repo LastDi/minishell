@@ -43,20 +43,23 @@ void	handler_ctrl_c(int val)
 void	handler_ctrl_backslash(int val)
 {
 	val = ft_strlen(rl_line_buffer);
-	if (val > 0 && !(ft_strncmp(rl_line_buffer, "cat", 3) || ft_strncmp(rl_line_buffer, "head", 4)
+	if ((ft_strncmp(rl_line_buffer, "cat", 3) == 0 \
+	|| ft_strncmp(rl_line_buffer, "head", 4) == 0 \
+	|| ft_strncmp(rl_line_buffer, "tail", 4) == 0))
+	{
+		ft_putstr_fd("Quit (core dumped)\n", 1);
+		exit(0);
+	}
+	else if (val > 0 && (ft_strncmp(rl_line_buffer, "cat", 4) \
+	|| ft_strncmp(rl_line_buffer, "head", 4) \
 	|| ft_strncmp(rl_line_buffer, "tail", 4)))
 	{
 		rl_on_new_line();
 		rl_redisplay();
 		ft_putstr_fd("\nexit \n", 1);
-	}
-	else if ((ft_strncmp(rl_line_buffer, "cat", 3) || ft_strncmp(rl_line_buffer, "head", 4
-	|| ft_strncmp(rl_line_buffer, "tail", 4))))
-	{
-		ft_putstr_fd("Quit (core dumped)\n", 1);
 		exit(0);
 	}
-	else 
+	else
 	{
 		rl_on_new_line();
 		rl_replace_line("", 11);
@@ -64,16 +67,7 @@ void	handler_ctrl_backslash(int val)
 	}
 }
 
-// Handler for ctrl+d (EOF)
-/* void	handler_ctrl_d()
-{
-	rl_on_new_line();
-	rl_redisplay();
-	ft_putstr_fd("exit \n", 1);
-	exit(0);
-} */
-
-void	handler_ctrl_d()
+void	handler_ctrl_d(void)
 {
 	rl_redisplay();
 	ft_putstr_fd("exit \n", 1);

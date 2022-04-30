@@ -14,7 +14,6 @@
 
 int	ft_choose_exec_com(t_com *com, t_list **evl)
 {
-	// todo change to strcmp
 	if (!ft_strncmp(com->name, "pwd", 5000000))
 		return (ft_pwd());
 	else if (!ft_strncmp(com->name, "echo", 5000000))
@@ -101,6 +100,7 @@ int	ft_exec_one_com(t_com *com, char **ev, t_list **evl)
 		pid = fork();
 		if (pid == 0)
 		{
+			signal(SIGQUIT, handler_ctrl_c);
 			ft_exec_full_path(com, ev, evl);
 			ft_exec_errors(com->name, ": command not found\n");
 			exit(1);
@@ -131,7 +131,6 @@ int	ft_exec_start(char **ev, t_com *com, t_list **evl)
 	}
 	free_com_list(com);
 	dup2(2, STDOUT_FILENO);
-	// todo???
 	dup2(1, STDOUT_FILENO);
 	dup2(1, STDIN_FILENO);
 	dup2(0, STDIN_FILENO);

@@ -82,7 +82,6 @@ char	**ft_split_shell(char const *s, char c, int i, t_shell *shell)
 	char	**x;
 	char	pre;
 
-
 	pre = c;
 	l = 0;
 	if (!s)
